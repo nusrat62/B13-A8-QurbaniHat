@@ -17,6 +17,11 @@ const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
@@ -90,7 +95,7 @@ const Navbar = () => {
             <Link
               href="/"
               onClick={toggleMenu}
-              className={`block px-4 py-2 ${safePathname === "/" ? "bg-primary-hover/80 text-white" : ""}`}
+              className={`block px-4 py-2 ${isMounted && safePathname === "/" ? "bg-primary-hover/80 text-white" : ""}`}
             >
               Home
             </Link>
@@ -98,7 +103,7 @@ const Navbar = () => {
             <Link
               href="/animals"
               onClick={toggleMenu}
-              className={`block px-4 py-2 ${safePathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
+              className={`block px-4 py-2 ${isMounted && safePathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
             >
               All Animals
             </Link>
