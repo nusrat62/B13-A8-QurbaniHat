@@ -69,7 +69,7 @@ const Navbar = () => {
             <Link
               href="/animals"
               className={`text-background hover:text-white px-3 py-2 rounded-lg transition-all
-              ${pathname?.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
+              ${safePathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
             >
               All Animals
             </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
             <Link
               href="/animals"
               onClick={toggleMenu}
-              className={`block px-4 py-2 ${pathname?.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
+              className={`block px-4 py-2 ${safePathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
             >
               All Animals
             </Link>
