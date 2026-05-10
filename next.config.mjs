@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "i.ibb.co",
-      "images.unsplash.com",
-      "tiimg.tistatic.com",
-       "cdn.vetverified.com",
-    "upload.wikimedia.org",
+    remotePatterns: [
+      { protocol: "https", hostname: "i.ibb.co" },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "tiimg.tistatic.com" },
+      { protocol: "https", hostname: "cdn.vetverified.com" },
+      { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
 };
