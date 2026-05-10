@@ -3,7 +3,7 @@ import { Home, ArrowRight } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-dvh bg-background flex items-center justify-center px-4 py-16">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 py-16">
       <div className="max-w-2xl w-full text-center">
         {/* Error Code */}
         <div className="mb-6">
