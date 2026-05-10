@@ -1,25 +1,34 @@
 import { Scale, Cake, Tag, MapPin } from "lucide-react";
 
 const AnimalQuickStats = ({ animal }) => {
+  if (!animal) return null; // ✅ guard
+
+  const {
+    weight,
+    age,
+    breed,
+    location,
+  } = animal;
+
   const stats = [
     {
       icon: Scale,
-      value: `${animal.weight} kg`,
+      value: weight ? `${weight} kg` : "N/A",
       label: "Weight",
     },
     {
       icon: Cake,
-      value: `${animal.age} years`,
+      value: age ? `${age} years` : "N/A",
       label: "Age",
     },
     {
       icon: Tag,
-      value: animal.breed,
+      value: breed || "Unknown",
       label: "Breed",
     },
     {
       icon: MapPin,
-      value: animal.location,
+      value: location || "Unknown",
       label: "Location",
     },
   ];
@@ -28,6 +37,7 @@ const AnimalQuickStats = ({ animal }) => {
     <div className="grid grid-cols-2 gap-4">
       {stats.map((stat, index) => {
         const Icon = stat.icon;
+
         return (
           <div
             key={index}
@@ -40,9 +50,11 @@ const AnimalQuickStats = ({ animal }) => {
                 <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
               </div>
             </div>
+
             <p className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-heading mb-1">
               {stat.value}
             </p>
+
             <p className="text-xs sm:text-sm text-muted font-body uppercase tracking-wide">
               {stat.label}
             </p>
