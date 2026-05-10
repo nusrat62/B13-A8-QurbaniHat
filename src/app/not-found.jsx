@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { Home, ArrowRight } from "lucide-react";
 
-export const metadata = {
-  title: "404 - Page Not Found | QurbaniHat",
-  description: "The page you're looking for doesn't exist or has been moved. Return to QurbaniHat homepage or browse our animals.",
-};
-
 export default function NotFound() {
   return (
     <div className="min-h-dvh bg-background flex items-center justify-center px-4 py-16">
