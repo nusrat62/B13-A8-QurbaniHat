@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Sahiwal",
+    "type": "Cow",
+    "weightRange": "300–500 kg",
+    "image": "https://i.ibb.co/nqf3BzRM/Sahiwal-Premium-Cow.png"
+  },
+  {
+    "id": 2,
+    "name": "Holstein Friesian",
+    "type": "Cow",
+    "weightRange": "400–700 kg",
+    "image": "https://i.ibb.co/B246jBmL/Holstein-Friesian-Cow.png"
+  },
+  {
+    "id": 3,
+    "name": "Red Chittagong",
+    "type": "Cow",
+    "weightRange": "250–400 kg",
+    "image": "https://i.ibb.co/GQqZKgB5/Red-Chittagong-Cow.png"
+  },
+  {
+    "id": 4,
+    "name": "Boer",
+    "type": "Goat",
+    "weightRange": "50–110 kg",
+    "image": "https://i.ibb.co/23J7LQVY/Boer-Goat.png"
+  },
+  {
+    "id": 5,
+    "name": "Black Bengal",
+    "type": "Goat",
+    "weightRange": "20–35 kg",
+    "image": "https://i.ibb.co/rG0HTKNx/Black-Bengal-Goat.png"
+  }
+]
