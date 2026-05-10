@@ -91,7 +91,7 @@ const Navbar = () => {
               className={`text-background hover:text-white font-medium text-sm lg:text-base px-3 lg:px-4 py-2 rounded-lg
                          hover:bg-primary-hover/80 hover:-translate-y-0.5
                          transition-all duration-200 active:scale-95
-                         ${pathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
+                         {${pathname?.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
             >
               All Animals
             </Link>
@@ -197,7 +197,7 @@ const Navbar = () => {
                 className={`block px-4 py-2.5 text-background hover:text-white rounded-lg font-medium text-sm
                            hover:bg-primary-hover/80 active:bg-primary-hover
                            transition-all duration-200
-                           ${pathname === "/" ? "bg-primary-hover/80 text-white" : ""}`}
+                          ${pathname === "/" ? "bg-primary-hover/80 text-white" : ""}`}
               >
                 Home
               </Link>
@@ -208,7 +208,7 @@ const Navbar = () => {
                 className={`block px-4 py-2.5 text-background hover:text-white rounded-lg font-medium text-sm
                            hover:bg-primary-hover/80 active:bg-primary-hover
                            transition-all duration-200
-                           ${pathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
+                           ${pathname?.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
               >
                 All Animals
               </Link>
