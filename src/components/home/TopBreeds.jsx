@@ -1,14 +1,8 @@
 import BreedCard from "./BreedCard";
+import topBreeds from "@/data/top-breeds.json";
 
-const TopBreeds = async () => {
-  // Fetch top breeds from the API
-  const res = await fetch("http://localhost:3000/api/animals", {
-  next: { revalidate: 300 },
-});
-  const data = await res.json();
-
-  // Extract top breeds from the API response
-  const breeds = data.topBreeds;
+const TopBreeds = () => {
+  const breeds = topBreeds;
 
   return (
     <section className="bg-background py-12 sm:py-16 lg:py-20 relative overflow-hidden">

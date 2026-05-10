@@ -62,7 +62,7 @@ const ProfilePage = async () => {
   };
 
   return (
-    <div className="min-h-dvh bg-background pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
+    <div className="min-h-screen bg-background pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
       <div className="xl:container mx-auto px-4">
         {/* Page Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">

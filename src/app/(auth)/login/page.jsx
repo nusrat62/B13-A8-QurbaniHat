@@ -10,7 +10,7 @@ export const metadata = {
 
 const LoginPage = () => {
   return (
-    <div className="min-h-dvh bg-background flex items-center justify-center p-4 sm:p-6 lg:p-8 pt-24 sm:pt-28 lg:pt-32">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6 lg:p-8 pt-24 sm:pt-28 lg:pt-32">
       <div className="w-full max-w-md space-y-8">
         {/* Form Header */}
         <div className="text-center space-y-3">

@@ -1,16 +1,9 @@
 import Link from "next/link";
 import AnimalsGrid from "../animals/AnimalsGrid";
+import animals from "@/data/animals.json";
 
-const FeaturedAnimals = async () => {
-  const res = await fetch("http://localhost:3000/api/animals", {
-  next: { revalidate: 300 },
-});
-
-  const data = await res.json();
-
-  const featuredAnimals = data.animals.filter(
-    (animal) => animal.featured === true
-  );
+const FeaturedAnimals = () => {
+  const featuredAnimals = animals.filter((animal) => animal.featured === true);
 
   return (
     <section className="bg-background py-12 sm:py-16 lg:py-20 relative overflow-hidden">

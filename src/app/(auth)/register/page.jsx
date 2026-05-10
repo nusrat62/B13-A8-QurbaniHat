@@ -9,7 +9,7 @@ export const metadata = {
 
 const RegisterPage = () => {
   return (
-    <div className="min-h-dvh bg-background flex items-center justify-center p-4 sm:p-6 lg:p-8 pt-24 sm:pt-28 lg:pt-32 pb-16">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6 lg:p-8 pt-24 sm:pt-28 lg:pt-32 pb-16">
       <div className="w-full max-w-md space-y-8">
         {/* Form Header */}
         <div className="text-center space-y-3">

@@ -3,7 +3,7 @@ import "animate.css";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-dvh overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-hidden">
       {/* Layer 1 — Base Image */}
       <div className="absolute inset-0 bg-cover bg-center hero-bg-image animate__animated animate__fadeIn" />
 
@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 hero-gradient-overlay animate__animated animate__fadeIn" />
 
       {/* Content Container */}
-      <div className="xl:container mx-auto relative z-10 px-4 flex items-center min-h-dvh">
+      <div className="xl:container mx-auto relative z-10 px-4 flex items-center min-h-screen">
         <div className="w-full max-w-4xl mx-auto lg:mx-0 text-center md:text-left py-8 sm:py-12">
           {/* Top Badge */}
           <div

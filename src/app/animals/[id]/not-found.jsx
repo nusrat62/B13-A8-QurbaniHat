@@ -3,7 +3,7 @@ import { AlertCircle } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-dvh bg-background pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
+    <div className="min-h-screen bg-background pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
       <div className="xl:container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center space-y-6 py-16 sm:py-20 lg:py-24">
           {/* Icon */}
