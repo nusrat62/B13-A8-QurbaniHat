@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, LogOut } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
@@ -10,11 +10,13 @@ import { toast } from "sonner";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const safePathname = typeof pathname === "string" ? pathname : "";
+
+  // SAFE fallback (important fix)
+  const safePathname = pathname ?? "";
 
   const router = useRouter();
 
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session } = authClient.useSession();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -28,9 +30,11 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await authClient.signOut();
+
       toast.success("Logged Out", {
         description: "You have been successfully logged out.",
       });
+
       setIsMenuOpen(false);
       router.push("/");
     } catch (error) {
@@ -49,6 +53,9 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const isHome = safePathname === "/";
+  const isAnimals = (safePathname ?? "").startsWith("/animals");
+
   return (
     <nav className="bg-primary shadow-lg fixed top-0 left-0 right-0 z-50 border-b border-primary-hover/50 backdrop-blur-sm">
       <div className="xl:container mx-auto px-4">
@@ -56,8 +63,22 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0 group">
-            <Image src="/logo-light.png" alt="Logo" width={56} height={56} className="w-9 h-9 sm:w-11 sm:h-11 lg:w-14 lg:h-14" priority />
-            <Image src="/brand-name-light.png" alt="Brand" width={160} height={80} className="w-20 h-10 sm:w-28 sm:h-14 lg:w-40 lg:h-20 object-contain" priority />
+            <Image
+              src="/logo-light.png"
+              alt="Logo"
+              width={56}
+              height={56}
+              className="w-9 h-9 sm:w-11 sm:h-11 lg:w-14 lg:h-14"
+              priority
+            />
+            <Image
+              src="/brand-name-light.png"
+              alt="Brand"
+              width={160}
+              height={80}
+              className="w-20 h-10 sm:w-28 sm:h-14 lg:w-40 lg:h-20 object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -66,7 +87,7 @@ const Navbar = () => {
             <Link
               href="/"
               className={`text-background hover:text-white px-3 py-2 rounded-lg transition-all
-              ${safePathname === "/" ? "bg-primary-hover/80 text-white" : ""}`}
+              ${isHome ? "bg-primary-hover/80 text-white" : ""}`}
             >
               Home
             </Link>
@@ -74,7 +95,7 @@ const Navbar = () => {
             <Link
               href="/animals"
               className={`text-background hover:text-white px-3 py-2 rounded-lg transition-all
-              ${safePathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
+              ${isAnimals ? "bg-primary-hover/80 text-white" : ""}`}
             >
               All Animals
             </Link>
@@ -95,7 +116,9 @@ const Navbar = () => {
             <Link
               href="/"
               onClick={toggleMenu}
-              className={`block px-4 py-2 ${isMounted && safePathname === "/" ? "bg-primary-hover/80 text-white" : ""}`}
+              className={`block px-4 py-2 ${
+                isMounted && isHome ? "bg-primary-hover/80 text-white" : ""
+              }`}
             >
               Home
             </Link>
@@ -103,13 +126,16 @@ const Navbar = () => {
             <Link
               href="/animals"
               onClick={toggleMenu}
-              className={`block px-4 py-2 ${isMounted && safePathname.startsWith("/animals") ? "bg-primary-hover/80 text-white" : ""}`}
+              className={`block px-4 py-2 ${
+                isMounted && isAnimals ? "bg-primary-hover/80 text-white" : ""
+              }`}
             >
               All Animals
             </Link>
 
           </div>
         )}
+
       </div>
     </nav>
   );
