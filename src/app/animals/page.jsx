@@ -1,5 +1,6 @@
 import AnimalsGrid from "@/components/animals/AnimalsGrid";
 import SortControl from "@/components/animals/SortControl";
+import animals from "@/data/animals.json";
 
 export const metadata = {
   title: "All Animals - Browse Qurbani Livestock | QurbaniHat",
@@ -11,14 +12,8 @@ export const metadata = {
 export const revalidate = 300;
 
 const AllAnimalsPage = async ({ searchParams }) => {
-  // ✅ FIX: use full URL for server-side fetch
-  const baseUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL || "http://localhost:3000";
-  const response = await fetch(`${baseUrl}/api/animals`, {
-    next: { revalidate: 300 },
-  });
-
-  const data = await response.json();
-  let animals = data.animals || [];
+  // ✅ FIX: Import data directly instead of fetching
+  let animalsData = animals || [];
 
   // Get sort order from URL search params
   const params = await searchParams;
@@ -26,9 +21,9 @@ const AllAnimalsPage = async ({ searchParams }) => {
 
   // Apply sorting
   if (sortOrder === "low-to-high") {
-    animals = [...animals].sort((a, b) => a.price - b.price);
+    animalsData = [...animalsData].sort((a, b) => a.price - b.price);
   } else if (sortOrder === "high-to-low") {
-    animals = [...animals].sort((a, b) => b.price - a.price);
+    animalsData = [...animalsData].sort((a, b) => b.price - a.price);
   }
 
   return (
@@ -42,7 +37,7 @@ const AllAnimalsPage = async ({ searchParams }) => {
               All Animals
             </h1>
             <p className="text-sm sm:text-base text-muted font-body">
-              Showing {animals.length} animals
+              Showing {animalsData.length} animals
             </p>
           </div>
 
@@ -50,10 +45,10 @@ const AllAnimalsPage = async ({ searchParams }) => {
         </div>
 
         {/* Grid */}
-        <AnimalsGrid animalsData={animals} />
+        <AnimalsGrid animalsData={animalsData} />
 
         {/* Empty State */}
-        {animals.length === 0 && (
+        {animalsData.length === 0 && (
           <div className="text-center py-16 sm:py-20 lg:py-24">
             <p className="text-lg sm:text-xl text-muted font-body">
               No animals available at the moment.

@@ -5,24 +5,14 @@ import AnimalQuickStats from "@/components/animals/AnimalQuickStats";
 import BookingSection from "@/components/animals/BookingSection";
 import RelatedAnimals from "@/components/animals/RelatedAnimals";
 import { notFound } from "next/navigation";
+import animals from "@/data/animals.json";
 
 // Enable ISR
 export const revalidate = 300;
 
-const getApiUrl = () => {
-  const baseUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL || "http://localhost:3000";
-  return `${baseUrl}/api/animals`;
-};
-
 export async function generateMetadata({ params }) {
   const { id } = params;
-
-  const response = await fetch(getApiUrl(), {
-    next: { revalidate: 300 },
-  });
-
-  const data = await response.json();
-  const animal = data?.animals?.find((a) => a.id === parseInt(id));
+  const animal = animals?.find((a) => a.id === parseInt(id));
 
   if (!animal) {
     return {
@@ -39,20 +29,13 @@ export async function generateMetadata({ params }) {
 
 const AnimalDetailsPage = async ({ params }) => {
   const { id } = params;
-
-  const response = await fetch(getApiUrl(), {
-    next: { revalidate: 300 },
-  });
-
-  const data = await response.json();
-
-  const animal = data?.animals?.find((a) => a.id === parseInt(id));
+  const animal = animals?.find((a) => a.id === parseInt(id));
 
   if (!animal) {
     notFound();
   }
 
-  const allAnimals = data?.animals || [];
+  const allAnimals = animals || [];
 
   return (
     <div className="min-h-screen bg-background pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
