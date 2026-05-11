@@ -11,8 +11,9 @@ export const metadata = {
 export const revalidate = 300;
 
 const AllAnimalsPage = async ({ searchParams }) => {
-  // ✅ FIX: direct API route (no env needed)
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/api/animals`, {
+  // ✅ FIX: use full URL for server-side fetch
+  const baseUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL || "http://localhost:3000";
+  const response = await fetch(`${baseUrl}/api/animals`, {
     next: { revalidate: 300 },
   });
 

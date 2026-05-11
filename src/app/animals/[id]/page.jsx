@@ -9,12 +9,15 @@ import { notFound } from "next/navigation";
 // Enable ISR
 export const revalidate = 300;
 
-const API_URL = "/api/animals"; // ✅ FIX: no env needed
+const getApiUrl = () => {
+  const baseUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL || "http://localhost:3000";
+  return `${baseUrl}/api/animals`;
+};
 
 export async function generateMetadata({ params }) {
   const { id } = params;
 
-  const response = await fetch(API_URL, {
+  const response = await fetch(getApiUrl(), {
     next: { revalidate: 300 },
   });
 
@@ -37,7 +40,7 @@ export async function generateMetadata({ params }) {
 const AnimalDetailsPage = async ({ params }) => {
   const { id } = params;
 
-  const response = await fetch(API_URL, {
+  const response = await fetch(getApiUrl(), {
     next: { revalidate: 300 },
   });
 
