@@ -10,9 +10,10 @@ export const metadata = {
 
 export const revalidate = 300;
 
-export default function AllAnimalsPage({ searchParams }) {
+export default async function AllAnimalsPage({ searchParams }) {
   let animalsData = Array.isArray(animals) ? animals : [];
-  const sortOrder = searchParams?.sort || "";
+  const params = await searchParams;
+  const sortOrder = params?.sort || "";
 
   if (sortOrder === "low-to-high") {
     animalsData = [...animalsData].sort((a, b) => a.price - b.price);

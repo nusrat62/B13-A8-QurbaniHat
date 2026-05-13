@@ -9,8 +9,14 @@ import animals from "@/data/animals.json";
 
 export const revalidate = 300;
 
-export function generateMetadata({ params }) {
-  const { id } = params;
+export function generateStaticParams() {
+  return animals.map((animal) => ({
+    id: animal.id.toString(),
+  }));
+}
+
+export async function generateMetadata({ params }) {
+  const { id } = await params;
   const animal = animals?.find((a) => a.id === parseInt(id));
 
   if (!animal) {
@@ -26,8 +32,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function AnimalDetailsPage({ params }) {
-  const { id } = params;
+export default async function AnimalDetailsPage({ params }) {
+  const { id } = await params;
   const animal = animals?.find((a) => a.id === parseInt(id));
 
   if (!animal) {
