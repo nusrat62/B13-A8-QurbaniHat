@@ -1,7 +1,7 @@
-import Featured from "../../components/Home/Featured";
-import Hero from "../../components/Home/Hero";
-import Tips from "../../components/Home/Tips";
-import TopBreeds from "../../components/Home/TopBreeds";
+import Featured from "../../components/home/Featured";
+import Hero from "../../components/home/Hero";
+import Tips from "../../components/home/Tips";
+import TopBreeds from "../../components/home/TopBreeds";
 const HomePage = () => {
     return (
         <div>
