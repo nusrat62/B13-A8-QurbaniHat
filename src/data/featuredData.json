@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Royal Deshi Cow",
+    "type": "Cow",
+    "breed": "Local Deshi",
+    "price": 135000,
+    "weight": 290,
+    "age": 3.5,
+    "location": "Bogura",
+    "description": "Healthy and strong Deshi cow, ideal for Qurbani. Naturally fed and disease-free.",
+    "image": "https://images.pexels.com/photos/18302421/pexels-photo-18302421.jpeg?_gl=1*152azxu*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3NzgyNTkxMDUkbzIkZzEkdDE3NzgyNTkxNTIkajEzJGwwJGgw",
+    "category": "Large Animal",
+    "badge": "Popular",
+    "isFeatured": true
+  },
+  {
+    "id": 2,
+    "name": "Black Bengal Goat",
+    "type": "Goat",
+    "breed": "Black Bengal",
+    "price": 28000,
+    "weight": 28,
+    "age": 1.8,
+    "location": "Rajshahi",
+    "description": "Pure Black Bengal breed goat, healthy and disease-free. Tender and tasty meat.",
+    "image": "https://images.pexels.com/photos/35340473/pexels-photo-35340473.jpeg?_gl=1*k9hdmx*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3NzgyNTkxMDUkbzIkZzEkdDE3NzgyNTkyNDMkajEzJGwwJGgw",
+    "category": "Small Animal",
+    "badge": "Best Seller",
+    "isFeatured": true
+  },
+  {
+    "id": 3,
+    "name": "Frisian Cross Cow",
+    "type": "Cow",
+    "breed": "Frisian Cross",
+    "price": 165000,
+    "weight": 340,
+    "age": 2.8,
+    "location": "Dhaka",
+    "description": "Modern Frisian cross breed, large in size. Perfect choice for Qurbani.",
+    "image": "https://images.pexels.com/photos/31113098/pexels-photo-31113098.jpeg?_gl=1*14e1sny*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3NzgyNTkxMDUkbzIkZzEkdDE3NzgyNTkzMDQkajM0JGwwJGgw",
+    "category": "Large Animal",
+    "badge": "Premium",
+    "isFeatured": true
+  },
+  {
+    "id": 4,
+    "name": "Jamuna Pari Goat",
+    "type": "Goat",
+    "breed": "Jamuna Pari",
+    "price": 38000,
+    "weight": 38,
+    "age": 2.2,
+    "location": "Tangail",
+    "description": "Large sized Jamuna Pari goat, perfect for Qurbani. Very healthy and strong.",
+    "image": "https://images.pexels.com/photos/29458488/pexels-photo-29458488.jpeg?_gl=1*1mjty4o*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3NzgyNjMxODgkbzMkZzEkdDE3NzgyNjMxOTQkajU0JGwwJGgw",
+    "category": "Small Animal",
+    "badge": "Trending",
+    "isFeatured": true
+  }
+]

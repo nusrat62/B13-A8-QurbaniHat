@@ -1,111 +1,62 @@
 import Link from "next/link";
-import "animate.css";
+import { FaArrowRight } from "react-icons/fa";
+import goru from "@/assets/chachar-sathe-goru.jpg"
+import Image from "next/image";
+import 'animate.css';
 
 const Hero = () => {
-  return (
-    <section className="relative w-full min-h-screen overflow-hidden">
-      {/* Layer 1 — Base Image */}
-      <div className="absolute inset-0 bg-cover bg-center hero-bg-image animate__animated animate__fadeIn" />
-
-      {/* Layer 2 — Gradient Overlay */}
-      <div className="absolute inset-0 hero-gradient-overlay animate__animated animate__fadeIn" />
-
-      {/* Content Container */}
-      <div className="xl:container mx-auto relative z-10 px-4 flex items-center min-h-screen">
-        <div className="w-full max-w-4xl mx-auto lg:mx-0 text-center md:text-left py-8 sm:py-12">
-          {/* Top Badge */}
-          <div
-            className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-5 lg:mb-6 bg-gradient-accent-soft border border-accent/40 backdrop-blur-sm animate__animated animate__fadeInDown"
-            style={{ animationDelay: "0.2s", animationFillMode: "both" }}
-          >
-            <span className="text-lg sm:text-xl">🌙</span>
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-accent uppercase">
-              Eid-ul-Adha 2026
-            </span>
-          </div>
-
-          {/* Main Headline */}
-          <h1 className="mb-4 sm:mb-5 lg:mb-6 font-heading capitalize">
-            <span
-              className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-bold text-white leading-[1.1] sm:leading-[1.15] tracking-tight animate__animated animate__fadeInLeft"
-              style={{ animationDelay: "0.4s", animationFillMode: "both" }}
-            >
-              Choose
-            </span>
-            <span
-              className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-bold text-white leading-[1.1] sm:leading-[1.15] tracking-tight animate__animated animate__fadeInLeft"
-              style={{ animationDelay: "0.6s", animationFillMode: "both" }}
-            >
-              your favorite
-            </span>
-            <span
-              className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-bold leading-[1.1] sm:leading-[1.15] tracking-tight bg-gradient-accent bg-clip-text text-transparent animate__animated animate__fadeInLeft animate__slow"
-              style={{ animationDelay: "0.8s", animationFillMode: "both" }}
-            >
-              sacrificial animal
-            </span>
-          </h1>
-
-          {/* Subheadline */}
-          <p
-            className="text-sm sm:text-[15px] md:text-base lg:text-[17px] leading-relaxed sm:leading-[1.65] max-w-xl lg:max-w-2xl mx-auto md:mx-0 font-body text-white/75 sm:text-white/78 px-2 sm:px-0 animate__animated animate__fadeInUp"
-            style={{ animationDelay: "1s", animationFillMode: "both" }}
-          >
-            Browse premium healthy livestock for Qurbani — cows, goats, and
-            more. Book with confidence.
-          </p>
-
-          {/* CTA Buttons */}
-          <div
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-3 sm:gap-3.5 lg:gap-4 mt-7 sm:mt-8 lg:mt-9 animate__animated animate__fadeInUp"
-            style={{ animationDelay: "1.2s", animationFillMode: "both" }}
-          >
-            <Link
-              href="/animals"
-              className="w-full sm:w-auto px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-sm sm:text-[15px] lg:text-base font-bold rounded-lg sm:rounded-xl transition-all duration-200 hover:scale-[1.02] sm:hover:scale-105 hover:brightness-110 active:scale-[0.98] bg-gradient-accent shadow-accent font-body text-primary text-center"
-            >
-              Browse All Animals →
-            </Link>
-            <Link
-              href="#how-it-works"
-              className="w-full sm:w-auto px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-sm sm:text-[15px] lg:text-base font-medium text-white rounded-lg sm:rounded-xl transition-all duration-200 hover:bg-white/15 active:bg-white/20 font-body bg-white/8 border-[1.5px] border-white/30 backdrop-blur-sm text-center"
-            >
-              How It Works
-            </Link>
-          </div>
-
-          {/* Stats Row */}
-          <div
-            className="flex items-center justify-center md:justify-start gap-4 sm:gap-6 lg:gap-8 mt-10 sm:mt-12 lg:mt-14 flex-wrap animate__animated animate__fadeInUp"
-            style={{ animationDelay: "1.4s", animationFillMode: "both" }}
-          >
-            {[
-              { number: "200+", label: "Premium Animals" },
-              { number: "6+", label: "Breeds Available" },
-              { number: "48hr", label: "Booking Confirmation" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 sm:gap-6 lg:gap-8"
-              >
-                <div className="text-center">
-                  <div className="text-xl sm:text-2xl lg:text-[28px] font-bold font-heading text-accent drop-shadow-lg">
-                    {stat.number}
-                  </div>
-                  <div className="text-[10px] sm:text-xs lg:text-sm mt-0.5 sm:mt-1 font-body text-white/60 whitespace-nowrap">
-                    {stat.label}
-                  </div>
+    return (
+        <div className="bg-linear-to-r from-[#2D6A4F] via-[#40916C] to-[#74C69D] py-20 px-2 md:px-4 lg:px-0 flex items-center justify-center gap-30 flex-wrap">
+            {/* left side */}
+            <div className="text-center lg:text-left">
+                {/* badge */}
+                
+                <div className="animate__animated animate__fadeInUp animate_fast inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <span className="text-yellow-300 text-sm">🕌</span>
+                    <span className="text-white text-sm font-medium">Eid-ul-Adha Special 2026</span>
                 </div>
-                {index < 2 && (
-                  <div className="hidden xs:block w-px h-8 sm:h-10 lg:h-12 bg-white/15" />
-                )}
-              </div>
-            ))}
-          </div>
+                {/* heading */}
+                <h1 className="animate__animated animate__fadeInUp animate_fast text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+                    Find Your Perfect
+                    <span className="block text-secondary-light mt-2">Qurbani Animal</span>
+                </h1>
+
+                {/* Description */}
+                <p className="animate__animated animate__fadeInUp animate_fast text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
+                    Select from our premium collection of healthy cows, goats, and sheep.
+                    Trusted by thousands for Qurbani across the country.
+                </p>
+
+                {/* browse btn */}
+                <Link href={"/animals"}>
+                    <button className="animate__animated animate__fadeInUp animate_fast mb-8 btn btn-outline hover:text-green-700 text-white mx-auto border-2 border-[#ffffff]"><FaArrowRight /> Browse Animals</button>
+                </Link>
+
+
+                {/* Stats */}
+                <div className="animate__animated animate__fadeInUp animate_fast grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+                    <div>
+                        <div className="text-2xl md:text-3xl font-bold text-white">500+</div>
+                        <div className="text-white/70 text-sm">Happy Customers</div>
+                    </div>
+                    <div>
+                        <div className="text-2xl md:text-3xl font-bold text-white">50+</div>
+                        <div className="text-white/70 text-sm">Animal Breeds</div>
+                    </div>
+                    <div>
+                        <div className="text-2xl md:text-3xl font-bold text-white">10+</div>
+                        <div className="text-white/70 text-sm">Cities Covered</div>
+                    </div>
+                </div>
+            </div>
+
+
+            {/* right side */}
+            <div>
+                <Image src={goru} alt="goru" height={400} className="animate__animated animate__fadeInUp animate_fast rounded-lg border-4 border-white/40" width={400} />
+            </div>
         </div>
-      </div>
-    </section>
-  );
+    );
 };
 
 export default Hero;

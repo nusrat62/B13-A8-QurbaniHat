@@ -1,44 +1,33 @@
-import dns from "node:dns";
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
-
-import { Inter, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-import { Toaster } from "sonner";
+import { Toaster } from "react-hot-toast";
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
-  preload: true,
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
-  preload: true,
 });
 
 export const metadata = {
-  title: "QurbaniHat - Modern Livestock Marketplace for Eid-ul-Adha",
-  description:
-    "QurbaniHat is a modern livestock marketplace built specifically for Eid-ul-Adha (Qurbani) season. It allows users to browse cows, goats, and other sacrificial animals, view detailed information, and place bookings — all through a clean, authenticated web experience.",
+  title: "QurbanirHat",
+  description: "A modern livestock marketplace where users can explore animals for Qurbani such as cows and goats. Users can view details and place a booking after authentication.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
+      data-theme="light"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body>
-        <Navbar />
-        <main className="bg-background">{children}</main>
-        <Footer />
-        <Toaster position="top-right" richColors />
-      </body>
+      <body className="bg-gray-50 min-h-full flex flex-col">
+        <Toaster/>
+        {children}
+        </body>
     </html>
   );
 }

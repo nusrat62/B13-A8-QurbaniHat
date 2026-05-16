@@ -1,14 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  /* config options here */
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "i.ibb.co" },
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "tiimg.tistatic.com" },
-      { protocol: "https", hostname: "cdn.vetverified.com" },
-      { protocol: "https", hostname: "upload.wikimedia.org" },
+      {
+        protocol: 'https',
+        hostname: '**',
+       
+      },
     ],
   },
+
+
+  reactCompiler: true,
+
 };
 
 export default nextConfig;

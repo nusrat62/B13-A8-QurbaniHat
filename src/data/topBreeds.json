@@ -1,0 +1,47 @@
+
+[
+  {
+    "id": 1,
+    "name": "Deshi Cow",
+    "type": "Cow",
+    "popularity": 95,
+    "image": "https://images.unsplash.com/photo-1669543994478-13e5cbfffab4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMGNvd3xlbnwwfHwwfHx8MA%3D%3D",
+    "description": "Traditional local breed, very healthy",
+    "priceMin": 120000,
+    "priceMax": 180000,
+    "priceRange": "120K - 180K"
+  },
+  {
+    "id": 3,
+    "name": "Frisian Cross",
+    "type": "Cow",
+    "popularity": 90,
+    "image": "https://images.pexels.com/photos/28424298/pexels-photo-28424298.jpeg?_gl=1*1r2apr4*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3NzgyNzM2MjYkbzUkZzEkdDE3NzgyNzM2MzIkajU0JGwwJGgw",
+    "description": "Large size, excellent for Qurbani",
+    "priceMin": 150000,
+    "priceMax": 220000,
+    "priceRange": "150K - 220K"
+  },
+  {
+    "id": 2,
+    "name": "Black Bengal",
+    "type": "Goat",
+    "popularity": 98,
+    "image": "https://images.pexels.com/photos/37265779/pexels-photo-37265779.jpeg?_gl=1*1fcqj0l*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3NzgyNzM2MjYkbzUkZzEkdDE3NzgyNzM3MzUkajQ2JGwwJGgw",
+    "description": "Most popular, tender meat",
+    "priceMin": 25000,
+    "priceMax": 35000,
+    "priceRange": "25K - 35K"
+  },
+  {
+    "id": 4,
+    "name": "Jamuna Pari",
+    "type": "Goat",
+    "popularity": 85,
+    "image": "https://images.pexels.com/photos/29605352/pexels-photo-29605352.jpeg?_gl=1*1ii9uxg*_ga*MzgyMzIyMDY0LjE3NzgyNDQ5MzY.*_ga_8JE65Q40S6*czE3NzgyNzM2MjYkbzUkZzEkdDE3NzgyNzM4MDIkajU1JGwwJGgw",
+    "description": "Large sized, very strong",
+    "priceMin": 35000,
+    "priceMax": 50000,
+    "priceRange": "35K - 50K"
+  }
+]

@@ -1,11 +1,9 @@
-import { createAuthClient } from "better-auth/react";
-
-const baseURL = process.env.NEXT_PUBLIC_SERVER_BASE_URL || "http://localhost:3000";
-
-// create ONLY ONCE
+import { createAuthClient } from "better-auth/react"
 export const authClient = createAuthClient({
-  baseURL,
-});
+    /** The base URL of the server (optional if you're using the same domain) */
+    baseURL: process.env.BETTER_AUTH_URL
 
-// destructure from SAME instance
-export const { signIn, signUp, useSession } = authClient;
+    
+})
+
+export const { signIn, signUp, useSession } = createAuthClient()

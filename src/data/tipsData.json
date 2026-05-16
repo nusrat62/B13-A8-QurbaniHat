@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "icon": "🔍",
+    "title": "Check Health",
+    "description": "Ensure the animal is healthy, active, and disease-free",
+    "color": "bg-emerald-900/20",
+    "iconColor": "text-[#40916C]",
+    "priority": 1
+  },
+  {
+    "id": 2,
+    "icon": "⚖️",
+    "title": "Verify Weight",
+    "description": "Animal must meet minimum weight requirements for Qurbani",
+    "color": "bg-amber-900/20",
+    "iconColor": "text-[#F59E0B]",
+    "priority": 2
+  },
+  {
+    "id": 3,
+    "icon": "🦷",
+    "title": "Check Age",
+    "description": "Cow: 2+ years, Goat: 1+ year, identify by teeth",
+    "color": "bg-teal-900/20",
+    "iconColor": "text-blue-500",
+    "priority": 3
+  },
+  {
+    "id": 4,
+    "icon": "📋",
+    "title": "Take Certificate",
+    "description": "Get veterinary health certificate before purchase",
+    "color": "bg-[#1B4332]/20",
+    "iconColor": "text-purple-500",
+    "priority": 4
+  },
+  {
+    "id": 5,
+    "icon": "🏠",
+    "title": "Check Shelter",
+    "description": "Ensure animal was raised in clean environment",
+    "color": "bg-teal-50",
+    "iconColor": "text-teal-500",
+    "priority": 5
+  },
+  {
+    "id": 6,
+    "icon": "💉",
+    "title": "Vaccination Record",
+    "description": "Ask for vaccination history and medical records",
+    "color": "bg-rose-50",
+    "iconColor": "text-rose-500",
+    "priority": 6
+  }
+]
